@@ -1,0 +1,131 @@
+@import url("https://fonts.googleapis.com/css2?family=Montserrat:wght@500&display=swap");
+
+html,
+body {
+  height: 100%;
+}
+
+.App {
+  font-family: sans-serif;
+  text-align: center;
+  --light-gray: #f9fafb;
+  --primary-color: #3730a3;
+  --dark-gray: #374151;
+  font-family: "Montserrat", sans-serif;
+  margin: -1rem;
+  min-height: 120vh;
+  color: var(--dark-gray);
+}
+
+nav {
+  padding: 0.15rem 0;
+  background: var(--primary-color);
+  margin-bottom: 1rem;
+  color: var(--light-gray);
+}
+
+input {
+  padding: 1rem;
+  width: 60%;
+  border-radius: 0.25rem;
+  border: 1px solid;
+  margin: 1.5rem auto 0 auto;
+}
+
+.classInput {
+  margin-bottom: 2rem;
+}
+
+input::placeholder {
+  color: var(--dark-gray);
+  font-weight: bold;
+  font-family: "Montserrat", sans-serif;
+}
+
+button {
+  padding: 0.75rem;
+  border-radius: 0.25rem;
+  border: 2px solid var(--light-gray);
+  font-family: "Montserrat", sans-serif;
+  background: var(--primary-color);
+}
+
+.enterBtn {
+  padding: 1rem;
+  border: 1px solid var(--dark-gray);
+  color: var(--light-gray);
+}
+
+button:hover {
+  background: #4f46e5;
+}
+
+.balP {
+  background: var(--primary-color);
+  width: 40%;
+  margin: auto;
+  margin-block-start: 0;
+  margin-block-end: 0;
+  padding: 1rem;
+  color: var(--light-gray);
+  border-radius: 0.75rem;
+}
+
+.bill {
+  width: 65%;
+  margin: 2rem auto;
+}
+
+table {
+  text-align: center;
+  border-collapse: collapse;
+}
+
+td,
+th {
+  padding: 0.75rem;
+  margin: 0;
+}
+
+tr:nth-child(even) {
+  background: #e0e7ff;
+}
+
+tr:nth-child(odd) {
+  background: #f9fafb;
+}
+
+th {
+  background: #e0e7ff;
+}
+
+img {
+  max-height: 350px;
+  max-width: 350px;
+}
+
+footer {
+  background: var(--primary-color);
+  color: var(--light-gray);
+  margin-bottom: 0;
+  height: 5rem;
+  border-top-left-radius: 2rem;
+  border-top-right-radius: 2rem;
+}
+ul {
+  margin: 0.75rem;
+}
+li {
+  list-style: none;
+  display: inline;
+  padding: 0rem 1rem;
+}
+h4 {
+  margin-block-start: 0;
+  margin-block-end: 0;
+  padding: 0.75rem;
+}
+a {
+  text-decoration: none;
+  color: var(--light-gray);
+}
