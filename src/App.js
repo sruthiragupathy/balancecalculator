@@ -3,7 +3,7 @@ import "./styles.css";
 import receipt from "./receipt.svg";
 
 export default function App() {
-  const cashArray = [2000, 500, 100, 20, 10, 5, 1];
+  const cashArray = [2000, 500, 100, 50, 20, 10, 5, 1];
   const [state, setState] = useState({
     bill: 0,
     cash: 0,
@@ -11,7 +11,8 @@ export default function App() {
   });
   const [bool, setBool] = useState({
     enter: false,
-    balance: false
+    balance: false,
+    error:false
   });
   const [balanceArr, setBalanceArr] = useState([]);
 
@@ -29,9 +30,14 @@ export default function App() {
   }
 
   function clickHandler(event) {
+  
+    if(state.cash>=state.bill){
+    balanceArr.length = 0;
     let balance = state.cash - state.bill;
     let obj1;
-    setBool({ ...bool, balance: true });
+    setBool({ error:false});
+    
+    setBool({ ...bool, balance: true,error:false });
     for (let i = 0; i < cashArray.length; i++) {
       let remainder = Math.floor(balance / cashArray[i]);
 
@@ -41,6 +47,15 @@ export default function App() {
         setBalanceArr(balanceArr);
         balance = balance - remainder * cashArray[i];
       }
+    }
+    }
+    else{
+    setBool({ ...bool, error:true,balance:false});
+    
+
+    
+
+
     }
   }
   return (
@@ -117,6 +132,28 @@ export default function App() {
             </ul>
           </footer>
         </>
+      )}
+         
+      {bool.error && (
+        <>
+      <h4 className="balP error">User amount is lesser than Bill amount! Please enter the valid values! </h4>
+      <footer>
+            <h4>Developed by sruthi</h4>
+            <ul>
+              <li>
+                <a href="https://twitter.com/CodesSruthi">Twitter</a>
+              </li>
+              <li>
+                <a href="https://github.com/sruthiragupathy">Github</a>
+              </li>
+              <li>
+                <a href="https://www.linkedin.com/in/sruthi-ragupathy-7740ab172/">
+                  LinkedIn
+                </a>
+              </li>
+            </ul>
+          </footer>
+          </>
       )}
     </div>
   );
